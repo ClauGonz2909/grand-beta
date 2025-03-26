@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+@import "tailwindcss";
+
+
+
+@theme {
+  --color-primary-oceanic: rgb(64,93,101);
+  --color-primary-dune: rgb(232,222,211);
+  --color-secondary-terracota: rgb(158,74,51);
+  --color-support-ash: rgb(40,40,41);
+  --color-support-iron: rgb(85,86,90);
+
+  --color-support-custom-gray: rgb(103,103,103);
+
+
+  --color-dark-oceanic: rgb(56,83,93);
+  --color-light-oceanic: rgb(86,117,126);
+
+  --color-dark-dune: rgb(213,201,190);
+  --color-light-dune: rgb(242,232,221);
+
+
+  --color-grey-grand: #bababa;
+  --text-parrafos: 14px;
+  --text-title-section: 24px;
+  --text-suptitle: .6em;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+ 
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham-Bold.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham-Light.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham-Book.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+.PrataFont {
+  font-family: 'Prata', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Prata', sans-serif;
+}
+
+p{
+  font-family: 'GothamBook', sans-serif;
+}
+
+.font-gotham-book {
+  font-family: 'gothambook', sans-serif;
+  font-weight: 500;
+}
+
+
+.suptitle{
+  font-family: 'GothamBook', sans-serif;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 0.8em;
+  margin-bottom: 10px;
+  color: var(--color-support-custom-gray);
+}
+.dropdown_menu {
+  transform: translateX(-100%);
+  transition: all .7s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--color-primary-oceanic);
+  height: 100vh;
+}
+
+.dropdown_menu.show-menu {
+  transform: translateX(0);
+}
+.swiper-button-prev:after, .swiper-button-next:after {
+  color: #ffffff;
+}
+
+
+@layer base {
+  h1 {
+    @apply text-4xl font-bold text-gray-900;
+  }
+  h2 {
+    @apply text-3xl font-semibold text-gray-800;
+  }
+  h3 {
+    @apply text-2xl font-medium text-gray-700;
+  }
+  h4 {
+    @apply text-xl font-medium text-gray-600;
+  }
+  p {
+    @apply text-base text-gray-600 leading-relaxed;
+  }
+}
+
+@layer components {
+  .divider-line {
+    @apply w-20 h-[3px] bg-grey-grand mb-4 mt-2;
+  }
+  .DropdownMenu {
+    @apply -translate-x-full transition-all duration-700 fixed top-0 left-0 w-full bg-[#405d65] h-screen;
+  }  
+  .fade-animation {
+    @apply  transition-opacity duration-300 ease-in-out;
+  }
+  .ItemsMenuLeft {
+    @apply  ml-[90px] ;
+  }
+  .ItemsMenuRight {
+    @apply  mr-[90px];
+  }
+  .FloatLeft{
+    @apply  absolute top-[65px] left-[calc((100%-1140px)/2)];
+  }
+  .FloatRight{
+    @apply  absolute top-[65px] right-[calc((100%-1140px)/2)];
+  }
+  .ContainerFlex{
+    @apply flex justify-between w-[1140px] mx-auto py-[60px] items-center;
+  }
+  .ContainerFull{
+    @apply flex justify-between w-[100%] mx-auto py-[60px] items-center;
+  }
+  .MenuLight{
+    @apply flex gap-[10px] text-white;
+  }
+  .FormTC {
+    @apply absolute left-1/2 z-[98] top-[80%] w-[1140px] h-[85px] bg-white translate-x-[-50%] m-0 rounded-none  w-full max-w-6xl mx-auto bg-white shadow-md flex items-center;
+  }
+  .OverlayHeader {
+    @apply w-full z-[99] absolute top-0 left-0 bg-gradient-to-b from-[rgba(0,0,0,0.4)] to-transparent h-full pointer-events-none;
+  }
+  .TitleSection {
+    @apply text-3xl font-normal text-primary-oceanic;
+  }
+  .SectionDiv {
+    @apply bg-white p-10  items-center justify-center flex flex-col;
+  }
+}
