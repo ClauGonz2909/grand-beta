@@ -169,4 +169,11 @@ p{
   .SectionDiv {
     @apply bg-white p-10  items-center justify-center flex flex-col;
   }
+
+  /* Lighbox*/
+  .yarl__container {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+  }
+
+  
 }

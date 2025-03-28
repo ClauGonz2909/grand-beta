@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaBars, FaTimes, FaPhone, FaBell, FaGlobe } from "react-icons/fa";
+import { FaBars, FaTimes, FaPhoneSquareAlt, FaBell, FaGlobe, FaCalendarAlt } from "react-icons/fa";
 
-const Header = () => {
+const HeaderTrad = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -14,12 +14,12 @@ const Header = () => {
 
   return (
     <header
-      className="absolute top-0 left-0 right-0 z-[99]"
+      className="absolute top-0 left-0 right-0 z-[2] font-gotham-book"
      
     >
       {/* Menú desplegable */}
       <div className="dropdown_menu">
-        <div className="flex justify-between items-center w-[1140px] mx-auto py-[40px] text-white">
+        <div className="h-screen flex justify-between items-center w-[1140px] mx-auto py-[40px] text-white">
           <ul >
             <li><Link href="#">Contacto</Link></li>
             <li><Link href="#">Contacto</Link></li>
@@ -32,6 +32,7 @@ const Header = () => {
       </div>
 
       {/* Botón hamburguesa / cerrar */}
+      <div className="MobileMenuAccomadation">
       <div className="text-white text-3xl FloatLeft" onClick={toggleMenu}>
         {showMenu ? <FaTimes /> : <FaBars />}
       </div>
@@ -39,25 +40,25 @@ const Header = () => {
       {/* Contenido principal del header */}
       <div className="ContainerFlex">
         <div className="ItemsMenuLeft">
-          <ul className="MenuLight">
-            <li>Habitaciones</li>
-            <li>Ofertas</li>
-          </ul>
-        </div>
-
-        <div className="logo-wrapper z-[99]">
           <Image
-            src="https://www.costadelsolperu.com/wp-content/uploads/2025/03/new-grand-aeropuerto-logo-blanco.svg"
+            src="/images/new-grand-costa-aeropuerto-logo-blanco.svg"
             alt="Restaurante del hotel"
-            width={450}
+            width={250}
             height={130}
           />
         </div>
+        <div className="">
+          <ul className="MenuLight">
+            <li><Link href="tel:+5102009200" className="flex items-center gap-2"><FaPhoneSquareAlt /><span className="hidden sm:inline">Reservas: +51(01) 2009200</span></Link></li>
+
+          </ul>
+        </div>
+
+        
 
         <div className="ItemsMenuRight">
           <ul className="MenuLight">
-            <li>Contacto</li>
-            <li>ITEM2</li>
+            <li><Link href="#" className="flex items-center gap-2"><FaCalendarAlt /><span className="hidden sm:inline">Modificar Reserva</span></Link></li>
           </ul>
         </div>
       </div>
@@ -67,10 +68,11 @@ const Header = () => {
         className="FloatRight MenuLight items-center"
         href="/en/hotel-wyndham-grand-costa-del-sol-lima-airport"
       >
-        <FaGlobe /> GB
+        <FaGlobe /> EN
       </Link>
+      </div>
     </header>
   );
 };
 
-export default Header;
+export default HeaderTrad;

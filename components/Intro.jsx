@@ -5,9 +5,9 @@ const Intro = () => {
   return (
     <section className="SectionDiv">
       
-      <div className="ContainerFlex">
+      <div className="ContainerFlex flex flex-col lg:flex-row">
         {/* Contenedor de imágenes */}
-        <div className="relative flex-1 max-w-md lg:max-w-lg">
+        <div className="flex-1 max-w-lg mx-auto">
           <div className="relative h-[400px] mx-auto">
             {/* Imagen grande (fondo) */}
             <Image
@@ -34,13 +34,13 @@ const Intro = () => {
         </div>
 
         {/* Contenido del hotel */}
-        <div className="flex-1 max-w-lg p-6 text-black-grand basis-1/4">
+        <div className="flex-1 max-w-lg mx-auto">
           <div>
           <h3 className="suptitle">
         Experimenta la exclusividad dentro de la ciudad aeropuerto
       </h3>
 
-          <h4 className="TitleSection">
+          <h4 className="text-3xl font-normal text-light-oceanic">
             Wyndham Grand<br></br> Costa del Sol Lima City
           </h4>
             <p className="text-sm">Estancia premium y servicio de clase mundial</p>
@@ -49,7 +49,7 @@ const Intro = () => {
             <span className="text-lg font-bold text-primary-oceanic">★★★★★</span>
             <span className="text-gray-700 text-sm">4.6 | 905 Opiniones</span>
           </div>
-          <p className="text-gray-700 leading-relaxed text-parrafos">
+          <p className="text-base">
             Ubicado dentro de la Ciudad aeropuerto (Jorge Chávez - LIM), Wyndham
             Grand Costa del Sol Lima Airport te evita la caminata de ida y vuelta
             por tiempo, al estar en una ciudad estratégica, con acceso directo a la

@@ -1,10 +1,12 @@
+
 import React from 'react'
 import Link from 'next/link' 
 import Header from '@/components/Header'
 import BookingForm from '@/components/BookingForm'
-import HeroSliderCompact from '@/components/ImageHederHab'
+import HeroSliderCompact from '@/components/ImageHeaderHab'
 import IntroHab from '@/components/IntroHab'
 import Gallery from '@/components/Gallery'
+import MatriSup from '@/components/MatriSup'
 
 const Habitaciones = () => {
   return (
@@ -20,6 +22,7 @@ const Habitaciones = () => {
       </div>
 
       <IntroHab />
+      <MatriSup />
       <Gallery  />
 
       
