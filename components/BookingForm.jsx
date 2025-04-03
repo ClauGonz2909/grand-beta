@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Link from "next/link";
+
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { registerLocale } from "react-datepicker";
@@ -8,7 +10,8 @@ import { IoLocationOutline } from "react-icons/io5";
 import es from "date-fns/locale/es";
 registerLocale("es", es);
 
-export default function BookingForm() {
+export default function BookingForm({ showForm, onCloseForm, isFixed })
+ {
   const today = new Date();
   const tomorrow = new Date();
   tomorrow.setDate(today.getDate() + 1);
@@ -110,11 +113,22 @@ export default function BookingForm() {
   };
 
   return (
-    <div className="FormTC">
+    <div className={`FormTC 
+    ${showForm ? "transition-all duration-500 ease-in-out lg:transition-none opacity-100 fixed " : 
+    " -translate-y-full  z-[1] bg-white transition-all duration-500 ease-in-out lg:transition-none "}
+    ${isFixed ? "fixed max-w-full right-0 top-0 lg:top-22 left-50% w-full z-50 bg-white shadow-md rounded-none" : ""}`}>
+
+
+      <div className="HeadHiddenForm">
+        <Link href={"#"} onClick={(e) => {
+            e.preventDefault();
+            onCloseForm();
+          }}>X Cerrar</Link>
+      </div>
       <form
         name="resform"
         id="resform"
-        className="w-full grid grid-cols-12 gap-4 items-center px-6 py-4"
+        className="ResForm"
         method="get"
         target="_blank"
         onSubmit={handleSubmit}
@@ -125,7 +139,7 @@ export default function BookingForm() {
         )}
 
         {/* Campo búsqueda de hotel con limpieza */}
-        <div className="flex flex-col col-span-4 relative">
+        <div className="flex flex-col col-span-4 lg:col-span-4 relative">
           <label className="text-xs text-gray-500 uppercase tracking-wide mb-1">
             ¿Adónde vas?
           </label>
@@ -165,7 +179,7 @@ export default function BookingForm() {
         </div>
 
         {/* Fecha Check-in + Check-out */}
-        <div className="flex flex-col col-span-3">
+        <div className="flex flex-col col-span-4 lg:col-span-3">
           <span className="text-xs text-gray-500 uppercase tracking-wide">
             Fechas
           </span>
@@ -211,7 +225,7 @@ export default function BookingForm() {
         
 
         {/* Promo code */}
-        <div className="flex flex-col col-span-2">
+        <div className="flex flex-col col-span-4 lg:col-span-2">
           <span className="text-xs text-gray-500 uppercase tracking-wide">
             Promocode
           </span>
@@ -224,7 +238,7 @@ export default function BookingForm() {
         </div>
 
         {/* Submit */}
-        <div className="flex flex-col col-span-3">
+        <div className="flex flex-col col-span-4 lg:col-span-3">
           <button
             type="submit"
             className="h-full w-full bg-[#40666a] text-white text-lg font-serif px-6 py-3"

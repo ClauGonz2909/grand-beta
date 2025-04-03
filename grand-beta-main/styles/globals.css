@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+@import "tailwindcss";
+
+
+
+@theme {
+  --color-primary-oceanic: rgb(64,93,101);
+  --color-primary-dune: rgb(232,222,211);
+  --color-secondary-terracota: rgb(158,74,51);
+  --color-support-ash: rgb(40,40,41);
+  --color-support-iron: rgb(85,86,90);
+
+  --color-support-custom-gray: rgb(103,103,103);
+
+
+  --color-dark-oceanic: rgb(56,83,93);
+  --color-light-oceanic: rgb(86,117,126);
+
+  --color-dark-dune: rgb(213,201,190);
+  --color-light-dune: rgb(242,232,221);
+
+
+  --color-grey-grand: #bababa;
+  --text-parrafos: 14px;
+  --text-title-section: 24px;
+  --text-suptitle: .6em;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+ 
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham-Bold.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham-Light.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham-Book.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+.PrataFont {
+  font-family: 'Prata', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Prata', sans-serif;
+}
+
+p{
+  font-family: 'Gotham-book', sans-serif;
+}
+
+.font-gotham-book {
+  font-family: 'gotham-book', sans-serif;
+  font-weight: 500;
+}
+.FormTC{
+  font-family: 'gothamgotham-book', sans-serif;
+}
+.CardHotel{
+  font-family: 'Gotham', sans-serif;
+}
+.react-datepicker__current-month {
+  font-family: 'gothamgotham-book', sans-serif !important; /* o cualquier fuente que estés usando */
+}
+
+.HamburgerIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.bar {
+  height: 3px;
+  transition: 0.4s;
+  border-radius: 2px;
+}
+
+/* Animaciones para convertir en X */
+.bar1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.bar2 {
+  opacity: 0;
+}
+
+.bar3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+.suptitle{
+  font-family: 'Gotham', sans-serif;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 0.8em;
+  margin-bottom: 10px;
+  color: var(--color-support-custom-gray);
+}
+.dropdown_menu {
+  transform: translateX(-100%);
+  transition: all .7s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--color-primary-oceanic);
+  height: 100vh;
+}
+
+.dropdown_menu.show-menu {
+  transform: translateX(0);
+  z-index: 9;
+}
+.swiper-button-prev:after, .swiper-button-next:after {
+  color: #ffffff;
+}
+
+@layer base {
+  h1 {
+    @apply text-4xl font-bold text-gray-900;
+  }
+  h2 {
+    @apply text-3xl font-semibold text-gray-800;
+  }
+  h3 {
+    @apply text-2xl font-medium text-gray-700;
+  }
+  h4 {
+    @apply text-xl font-medium text-gray-600;
+  }
+  p {
+    @apply text-base text-gray-600 leading-relaxed;
+  }
+  
+}
+
+@layer components {
+  .divider-line {
+    @apply w-20 h-[3px] bg-grey-grand mb-4 mt-2;
+  }
+  .DropdownMenu {
+    @apply -translate-x-full transition-all duration-700 fixed top-0 left-0 w-full bg-[#405d65] h-screen;
+  }  
+  .fade-animation {
+    @apply  transition-opacity duration-300 ease-in-out;
+  }
+  .ItemsMenuLeft {
+    @apply  ml-[70px] lg:ml-[90px];
+  }
+  .ItemsMenuCenter{ 
+    @apply hidden lg:block;
+  }
+  .ItemsMenuRight {
+    @apply  mr-[90px] hidden lg:block;
+  }
+  .SwitchLang{
+    @apply  lg:block;
+  }
+  .FloatLeft {
+    @apply absolute top-[inherit] lg:top-[65px] left-[20px]  lg:left-[calc((100%-1140px)/2)] z-[9];
+  }
+  
+  .FloatRight {
+    @apply absolute top-[inherit] lg:top-[65px] right-[20px] lg:right-[calc((100%-1140px)/2)];
+  }
+  
+  .ContainerFlex {
+    @apply flex flex-col  lg:flex-row justify-between items-center gap-[25px] lg:gap-10 mx-auto py-[30px] lg:py-[60px] w-full max-w-[1140px];
+  }
+   
+  .ContainerFull{
+    @apply flex justify-between w-[100%] mx-auto py-[60px] items-center;
+  }
+  .MenuLight{
+    @apply lg:items-center lg:flex gap-[10px] text-white;
+  }
+  .HeadHiddenForm {
+    @apply flex p-10 lg:hidden justify-end;
+  }
+  .FormTC {
+    @apply   lg:rounded-sm lg:block absolute left-1/2 z-[6] top-0 lg:top-[90%] w-[1140px] h-screen lg:h-auto lg:h-[85px] bg-white translate-x-[-50%] m-0 rounded-none  w-full max-w-6xl mx-auto bg-white shadow-md flex flex-col justify-start lg:items-center;
+  }
+  .OverlayHeader {
+    @apply w-full z-[99] absolute top-0 left-0 bg-gradient-to-b from-[rgba(0,0,0,0.4)] to-transparent h-full pointer-events-none;
+  }
+  .TitleSection {
+    @apply text-3xl font-normal text-light-oceanic;
+  }
+  .SectionDiv {
+    @apply bg-white p-10  items-center justify-center flex flex-col;
+  }
+  .MobileMenuAccomadation {
+    @apply flex justify-evenly items-center relative;
+  }
+  .RegionLocation {
+    @apply flex flex-col gap-2 pl-4 py-1 text-sm font-bold text-secondary-terracota;
+  }
+  .ResForm {
+    @apply w-full grid grid-cols-1 lg:grid-cols-12 gap-4 items-center px-6 py-4;
+  }
+  .ButtonSolid  {
+    @apply bg-[#405d65] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#2e4448] transition;
+  }
+  .BgImageLeft {
+    @apply w-full  bg-[url('/images/pattern-10r.png')] bg-contain  bg-no-repeat bg-[position:-18%_0px];
+  }
+  .BgImageRight {
+    @apply w-full bg-[url('/images/pattern-10r.png')] bg-contain bg-no-repeat;
+  }
+  .InnerDropdownMenu {
+    @apply flex  items-start w-full h-screen relative mx-auto px-4 lg:px-0 py-[25%] lg:py-[10%] text-white;
+  }
+  .InnerDropdownMenu .ContainerFlex{
+    @apply lg:hidden flex;
+  }
+  .InnerDropdownMenu .ContainerFlex > div{
+    @apply lg:hidden flex;
+  }
+  .InnerDropdownMenu .ContainerFlex .ItemsMenuLeft, .InnerDropdownMenu .ContainerFlex .ItemsMenuRight{
+    @apply m-0 ;
+  }
+  .MegaMenu {
+    @apply lg:w-auto overflow-scroll lg:overflow-hidden justify-start lg:justify-between;
+  }
+  .MegaGroup {
+    @apply w-full lg:w-auto;
+  }
+  .MegaGroupTitle{
+    @apply mb-0;
+  }
+  .MegaGroupOpen{
+    @apply block lg:hidden text-[#ffffff] text-sm;
+  }
+  .MegaGroup ul li {
+    @apply mb-2;
+  }
+  .MegaGroupHeader{
+    @apply border-b-[1px] border-white pb-2 lg:border-none flex items-center justify-between;
+  }
+  .ButtonBooking{
+    @apply top-[90%] lg:hidden text-white;
+  }
+  .CardHotel{
+    @apply  [display:inherit] lg:inline h-auto rounded-xl overflow-hidden border border-grey-grand shadow-sm bg-white hover:shadow-md transition;
+  }
+  .CardHotelImage{
+    @apply relative w-full h-[180px];
+  }
+  .CardHotelContent{
+    @apply p-3;
+  }
+  .SwipperCardHotel{
+    @apply w-[230px] lg:w-[300px];
+  }
+  footer{
+    @apply bg-[#405d65] text-white py-10 px-4 lg:px-0;
+  }
+    .react-datepicker__month-container {
+      @apply w-full md:w-auto;
+    }
+.PrimaryColor{
+  @apply bg-primary-oceanic text-white ;    
+}
+.ButtonRounded{
+  @apply px-6 py-3 text-xs rounded-md;  
+}
+}
+
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

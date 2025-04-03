@@ -2,21 +2,30 @@ import React from 'react';
 
 const RestBar = () => {
   return (
-    <section className="SectionDiv p-0">
+    <section className="SectionDiv BgImageLeft">
       
       {/* Cabecera principal con imagen de fondo a pantalla completa */}
-      <div
-        className="ContainerFull bg-fixed bg-center bg-cover bg-no-repeat"
+     
+     <div
+        className="relative w-full min-h-[400px] md:min-h-[500px] flex items-center justify-center text-white px-6"
         style={{
-          backgroundImage: "url('https://cdn2.paraty.es/wyndham-grand-cancun/images/868847eb274c834')",
-          height: "40vh",
+          backgroundImage: "url('https://www.costadelsolperu.com/sariaskybar/wp-content/uploads/2024/11/Terraza.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       >
-
-        
-
-
+        {/* Texto en la esquina inferior derecha */}
+        <div className="absolute bottom-8 right-8 md:bottom-12 md:right-12 z-10 text-right">
+          <h2 className="text-white text-3xl md:text-5xl font-light tracking-wide backdrop-blur-sm">
+            RESTAURANTES Y BARES
+          </h2>
+          <p className="text-sm font-light tracking-wide md:text-white bg-olive-grand px-4 py-2 mt-2 rounded-md inline-block shadow-lg">
+            Wyndham Grand Costa del Sol Lima Airport
+          </p>
+        </div>
       </div>
+
 
       {/* Contenedor de contenido */}
       <div className="ContainerFlex">

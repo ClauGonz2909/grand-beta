@@ -3,7 +3,7 @@ import React from 'react'
 const IntroHab = () => {
   return (
     <section className="pt-45 pb-10"> {/* <-- aquí agregamos espacio arriba */}
-      <div className="max-w-3xl mx-auto text-center">
+      <div className="max-w-3xl mx-auto text-center pb-15">
         <h2 className="text-4xl font-normal text-light-oceanic">
           Habitaciones y Suites
         </h2>

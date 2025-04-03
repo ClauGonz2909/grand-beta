@@ -7,7 +7,7 @@ const Ofertas = () => {
       <div className="ContainerFlex">
         {/* Texto vertical "Ofertas" más angosto */}
         <div className="container flex justify-center md:justify-end items-center flex-[1]">
-          <h2 className="text-8xl font-serif font-medium text-olive-grand tracking-widest transform -rotate-90 origin-bottom -translate-x-8">
+          <h2 className="TitleSection text-8xl tracking-widest -rotate-90 ">
             Ofertas
           </h2>
         </div>
@@ -26,7 +26,7 @@ const Ofertas = () => {
 
           {/* Contenido */}
           <div className="p-6 text-black-grand">
-            <button className="bg-olive-grand text-white px-6 py-3 text-xs rounded-md mb-4">
+            <button className="ButtonSolid text-xs mb-4 inline-block">
               <a href="#">TARIFA DE APERTURA</a>
             </button>
             <p className="text-parrafos text-sm">

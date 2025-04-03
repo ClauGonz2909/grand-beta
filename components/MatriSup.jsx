@@ -21,12 +21,15 @@ import {
 } from "react-icons/fa";
 
 const images = [
-  "https://picsum.photos/id/1015/800/500",
-  "https://picsum.photos/id/1016/800/500",
-  "https://picsum.photos/id/1018/800/500",
-  "https://picsum.photos/id/1020/800/500",
-  "https://picsum.photos/id/1021/800/500",
-  "https://picsum.photos/id/1024/800/500",
+  "https://www.costadelsolperu.com/wp-content/uploads/2025/01/WG-Habitacion-King-2.jpg",
+  "https://www.costadelsolperu.com/wp-content/uploads/2025/01/WG-Habitacion-King-2.jpg",
+  "https://www.costadelsolperu.com/wp-content/uploads/2025/01/WG-Habitacion-King-2.jpg",
+  "https://www.costadelsolperu.com/wp-content/uploads/2025/01/WG-Habitacion-King-2.jpg",
+  "https://www.costadelsolperu.com/wp-content/uploads/2025/01/WG-Habitacion-King-2.jpg",
+  "https://www.costadelsolperu.com/wp-content/uploads/2025/01/WG-Habitacion-King-2.jpg",
+  "https://www.costadelsolperu.com/wp-content/uploads/2025/01/WG-Habitacion-King-2.jpg",
+
+   
 ];
 
 const MatriSup = () => {
